@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Rose Betrayal 💔</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      font-family: 'Georgia', cursive;
+      background: linear-gradient(135deg, #fff0f5, #dff6ff);
+      color: #333;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2.2em;
+      color: #ff4d6d;
+      margin-bottom: 40px;
+    }
+
+    #text {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .line {
+      font-size: 1.25em;
+      margin: 12px 0;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    #photo {
+      display: none;
+      margin: 40px auto 20px;
+      max-width: 500px;
+      width: 90%;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    #nextBtn {
+      display: none;
+      margin-top: 30px;
+      padding: 12px 25px;
+      font-size: 1em;
+      background-color: #ff85a2;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    #nextBtn:hover {
+      background-color: #ff4d6d;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>💔 When I Found the Photo…</h2>
+
+  <div id="text">
+    <div class="line">I was scrolling… smiling… loving you as always…</div>
+    <div class="line">And then I saw it.</div>
+    <div class="line">You.</div>
+    <div class="line">Holding a rose.</div>
+    <div class="line">Looking at him.</div>
+    <div class="line">Like that. 😭</div>
+    <div class="line"><br>I thought I was your girl.</div>
+    <div class="line">But it turns out… I was just… a shadow.</div>
+    <div class="line">A placeholder.</div>
+    <div class="line">A second choice to your bromance. 😭💐</div>
+    <div class="line"><br>Anyway. I’m crying. Don’t talk to me.</div>
+    <div class="line">Unless you’re bringing <em>me</em> the next rose.</div>
+    <div class="line">Alone.</div>
+    <div class="line">On one knee.</div>
+    <div class="line">😤</div>
+  </div>
+
+  <img id="photo" src="assets/bro.jpg" alt="Caught in the act 💐">
+
+  <br>
+  <button id="nextBtn" onclick="goToPortal()">Fine. Go to the Heart Portal 💘</button>
+
+  <audio autoplay loop>
+    <source src="assets/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    const lines = document.querySelectorAll(".line");
+    let index = 0;
+
+    function showLine() {
+      if (index < lines.length) {
+        lines[index].style.opacity = 1;
+        index++;
+        setTimeout(showLine, 1000);
+      } else {
+        setTimeout(() => {
+          document.getElementById("photo").style.display = "block";
+          document.getElementById("nextBtn").style.display = "inline-block";
+        }, 1000);
+      }
+    }
+
+    function goToPortal() {
+      window.location.href = "heartportal.html";
+    }
+
+    window.onload = showLine;
+  </script>
+</body>
+</html>

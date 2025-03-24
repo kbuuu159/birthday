@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Quest Begins</title>
+  <link rel="stylesheet" href="adventure.css" />
+</head>
+<body>
+  <div class="adventure-container">
+    <h1>🎮 Welcome to Your Birthday Quest!</h1>
+    <p class="intro-text">
+      Brave, beautiful hero — you’ve made it through the Love Book.<br>
+      Now begins your journey through our memories, our laughter, and your surprise. 💘
+    </p>
+
+    <div class="level-buttons">
+      <button onclick="goTo('memories.html')">🌸 Level 1: Garden of Memories</button>
+      <button onclick="goTo('quiz.html')">🧠 Level 2: The Love Quiz</button>
+      <button onclick="goTo('letter.html')">💌 Level 3: The Love Letter</button>
+      <button onclick="goTo('gift.html')">🎁 Final Level: Your Surprise Gift</button>
+    </div>
+  </div>
+
+  <audio autoplay loop>
+    <source src="assets/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    function goTo(page) {
+      window.location.href = page;
+    }
+  </script>
+</body>
+</html>

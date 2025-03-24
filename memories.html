@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Level 1: Garden of Memories</title>
+  <link rel="stylesheet" href="memories.css" />
+</head>
+<body>
+  <div class="memory-container">
+    <h1>🌸 Level 1: Garden of Memories</h1>
+    <p class="intro-text">Click the button below to reveal our precious memories 💖</p>
+
+    <!-- Button to reveal memories -->
+    <button class="reveal-btn" onclick="revealMemories()">🌷 Reveal Memories</button>
+
+    <div class="memory-grid" id="memoryGrid">
+      <div class="memory" onclick="showMessage(0)">
+        <img src="assets/mem1.jpg" alt="Memory 1" />
+      </div>
+      <div class="memory" onclick="showMessage(1)">
+        <img src="assets/mem2.jpg" alt="Memory 2" />
+      </div>
+      <div class="memory" onclick="showMessage(2)">
+        <img src="assets/mem3.jpg" alt="Memory 3" />
+      </div>
+      <div class="memory" onclick="showMessage(3)">
+        <img src="assets/mem4.jpg" alt="Memory 4" />
+      </div>
+      <div class="memory" onclick="showMessage(4)">
+        <img src="assets/mem5.jpg" alt="Memory 5" />
+      </div>
+      <div class="memory" onclick="showMessage(5)">
+        <img src="assets/mem6.jpg" alt="Memory 6" />
+      </div>
+    </div>
+
+    <!-- Memory message box -->
+    <div class="message-box" id="messageBox">
+      <p id="messageText">💬 Click a photo to reveal a memory...</p>
+    </div>
+
+    <!-- Continue button (Fixed at the bottom) -->
+    <div class="button-container">
+      <a href="quiz.html" class="next-btn">🧠 Continue to Level 2: The Love Quiz</a>
+    </div>
+  </div>
+
+  <audio autoplay loop>
+    <source src="assets/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    const captions = [
+      "In the heart of nature, where the world felt quiet and beautiful, you held me close—your hand resting gently on my neck, a silent promise of love and protection. That day, as we trekked through the wilderness, I wasn’t just exploring new paths; I was feeling the warmth of your care, the safety of your presence. Every step felt lighter, every breeze softer, because you were there, looking after me so tenderly.And oh, that early morning—how much more beautiful it felt with you by my side. The golden sunrise, the crisp air, and the soft whispers of the wind… everything was magical, but nothing as magical as you.A memory etched in my heart forever. 💖⛰️",
+      "That day was already special, but standing next to you made it unforgettable. The cool breeze, the peaceful nature, and us—just lost in the moment. We looked so cute together, like we belonged right there, side by side.Every time I see this photo, I can't help but smile. It reminds me of how happy, safe, and loved I feel with you. 💕",
+      "Caught in 4K , no hesitation, just pure dedication to devouring that mountain of noodles!  but damn, you still managed to look adorable!forever the funniest sight and my favorite memory!💖",
+      "You and me. Just us. The best kind of magic ✨",
+      "Your last birthday, and you were looking so damn handsome! Too much handsomeness in one day, definitely unforgettable! 💕😏",
+      "Okay, but how can someone smile this cutely?! Every time I see it, my heart just melts a little more. Falling for you was the best decision I ever made, and this smile reminds me why again and again! 💕🥰"
+    ];
+
+    function showMessage(index) {
+      const messageBox = document.getElementById("messageBox");
+      const messageText = document.getElementById("messageText");
+      
+      messageText.innerText = captions[index];
+      messageBox.classList.add("show");
+
+      
+    }
+
+    function revealMemories() {
+      document.getElementById("memoryGrid").classList.add("show-grid");
+      document.querySelector(".reveal-btn").style.display = "none"; // Hide button after clicking
+    }
+  </script>
+</body>
+</html>

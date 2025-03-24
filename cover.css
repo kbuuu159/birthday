@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', cursive;
+  background: linear-gradient(135deg, #ffe0f0, #d5f0ff);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  overflow: hidden;
+}
+
+/* Floating Hearts Animation */
+.heart-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+@keyframes float-hearts {
+  0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
+  100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+}
+
+.heart-container::after {
+  content: "💖";
+  position: absolute;
+  font-size: 2rem;
+  color: pink;
+  left: 50%;
+  animation: float-hearts 5s infinite ease-in-out;
+  animation-delay: calc(0.5s * var(--i));
+}
+
+/* Main Container */
+.cover-container {
+  background: white;
+  padding: 50px;
+  border-radius: 25px;
+  box-shadow: 0 10px 40px rgba(255, 192, 203, 0.3);
+  max-width: 650px;
+  width: 100%;
+}
+
+/* Surprise Text Animation */
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fade-in 1s ease-in-out forwards;
+}
+
+.step1 { animation-delay: 0.8s; }  /* First text appears */
+.step2 { animation-delay: 2s; }   /* Then intro line */
+.step3 { animation-delay: 3.5s; } /* Then love message */
+.step4 { animation-delay: 5s; }   /* Button appears last */
+
+/* Styling for text with better spacing */
+h1 {
+  font-size: 2.4em;
+  color: #ff4d6d;  /* Your original color */
+  margin-bottom: 25px;
+}
+
+.intro-line {
+  font-size: 1.3em;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+.love-message {
+  font-size: 1.2em;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+/* Button */
+button {
+  padding: 14px 35px;
+  background-color: #ff85a2;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff4d6d;
+  transform: scale(1.1);
+  box-shadow: 0px 5px 15px rgba(255, 77, 109, 0.5);
+}

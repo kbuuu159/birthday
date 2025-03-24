@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>You Unlocked Me 💖</title>
+  <link rel="stylesheet" href="gift.css">
+</head>
+<body>
+  <!-- 💥 Blast Effect -->
+  <div class="blast-screen" id="blast">
+    <div class="heart-burst">💖</div>
+    <h1>You Unlocked Me</h1>
+  </div>
+
+  <!-- 😘 Tease Message -->
+  <div class="tease-message" id="tease" style="display: none;">
+    <p>
+      Just kidding 😘<br>
+      You didn’t unlock me... you owned me the moment you smirked at me like I was already yours.<br><br>
+      And after that kiss? I swear my heart forgot how to beat.<br>
+      But when your hands touched me... my whole body just— melted.<br>
+      It felt like heaven. Like my skin finally found where it belonged.<br>
+      And in that moment, all I wanted was you.<br>
+      Just you.<br>
+      Forever.
+    </p>
+
+    <button onclick="startPortal()">💘 Open the Heart Portal</button>
+  </div>
+
+  <audio autoplay loop>
+    <source src="assets/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("blast").style.display = "none";
+      document.getElementById("tease").style.display = "block";
+    }, 4000); // Blast lasts 4 seconds
+
+    function startPortal() {
+      window.location.href = "heartportal.html"; // Link to final feelings page
+    }
+  </script>
+</body>
+</html>
+

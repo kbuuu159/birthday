@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive;
+    background: linear-gradient(135deg, #fff1f9, #d4f1ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .adventure-container {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+  }
+  
+  h1 {
+    font-size: 2.2em;
+    color: #ff4d6d;
+    margin-bottom: 20px;
+  }
+  
+  .intro-text {
+    font-size: 1.1em;
+    color: #444;
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+  
+  .level-buttons button {
+    display: block;
+    margin: 12px auto;
+    padding: 12px 25px;
+    font-size: 1em;
+    background-color: #ff85a2;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .level-buttons button:hover {
+    background-color: #ff4d6d;
+  }
+  

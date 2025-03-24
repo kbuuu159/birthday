@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Love Book</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="book-container">
+    <div class="page">
+      <div class="photo">
+        <img id="photo" src="assets/img1.jpg" alt="His photo" />
+      </div>
+      <div class="message">
+        <p id="text">You in this one?? Literally illegal levels of cuteness. How are you real? 😭💕</p>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="prevPage()">⟵ Prev</button>
+      <span id="pageNum">1 / 8</span>
+      <button onclick="nextPage()">Next ⟶</button>
+    </div>
+
+    <!-- 🎮 Show only at last page -->
+    <a href="adventure.html" id="continueBtn" class="continue-link" style="display: none;">
+      🎮 Continue to Your Birthday Quest
+    </a>
+  </div>
+
+  <audio autoplay loop>
+    <source src="assets/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

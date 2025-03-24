@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Level 2: The Love Quiz</title>
+  <link rel="stylesheet" href="quiz.css" />
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>🧠 Level 2: The Love Quiz</h1>
+    <p id="question" class="question-text"></p>
+    <div id="answers" class="answer-buttons"></div>
+    <p id="feedback" class="feedback-text"></p>
+
+    <button id="nextBtn" onclick="nextQuestion()" style="display:none;">Next Question ➡️</button>
+    <a href="letter.html" id="finishBtn" class="finish-btn" style="display: none;">💌 Continue to Level 3: The Love Letter</a>
+  </div>
+
+  <audio autoplay loop>
+    <source src="assets/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="quiz.js"></script>
+</body>
+</html>

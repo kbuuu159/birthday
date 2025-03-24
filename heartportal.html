@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Portal 💖</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            color: white;
+            font-family: "Georgia", serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        #container {
+            width: 60%;
+            height: 70vh;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: left;
+            overflow-y: auto;
+            border-left: 4px solid #ff66b2;
+            padding-left: 15px;
+            position: relative;
+        }
+        #cursor {
+            display: inline-block;
+            width: 8px;
+            height: 20px;
+            background: white;
+            animation: blink 0.8s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        #finalMessage {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🌟 The Heart Portal 💖</h1>
+    <p><em>I just wanted to tell you this…</em></p>
+    
+    <div id="container">
+        <div id="letter"></div><span id="cursor"></span>
+    </div>
+
+    <div id="finalMessage">I love you tons, forever and always. 💖</div>
+
+    <script>
+        const letterParagraphs = [
+            "My love,",
+            "There are so many things I want to say, but no words will ever be enough to truly capture how much you mean to me. You are my happiness, my safe place, my favorite person in the entire world.",
+            "Every moment with you feels like a dream I never want to wake up from. The way you make me smile, the way you take care of me, the way you just exist—it's all so perfect to me.",
+            "I know sometimes I can be a little stubborn, a little silly, maybe even a little annoying , but please know that even in those moments, I love you with all my heart. I’m sorry if I ever make mistakes, but I promise, my love for you will never change. It will only grow stronger, every single day.",
+            "You are the best thing that has ever happened to me, and I feel so lucky to have you. No matter what, no matter where, no matter when—my heart will always belong to you.",
+            "Yours, always. 💕"
+        ];
+
+        let i = 0;
+        let j = 0;
+        const letterElement = document.getElementById("letter");
+        const cursor = document.getElementById("cursor");
+        const finalMessage = document.getElementById("finalMessage");
+
+        function typeLetter() {
+            if (i < letterParagraphs.length) {
+                let paragraph = document.createElement("p");
+                letterElement.appendChild(paragraph);
+                typeText(paragraph, letterParagraphs[i], 0);
+            } else {
+                cursor.style.display = "none";
+                setTimeout(() => {
+                    finalMessage.style.opacity = "1"; // Show final message
+                }, 1000);
+            }
+        }
+
+        function typeText(element, text, index) {
+            if (index < text.length) {
+                element.innerHTML += text.charAt(index);
+                setTimeout(() => typeText(element, text, index + 1), 50);
+            } else {
+                i++;
+                letterElement.parentElement.scrollTop = letterElement.parentElement.scrollHeight; // Auto-scroll
+                setTimeout(typeLetter, 1000);
+            }
+        }
+
+        window.onload = () => {
+            setTimeout(typeLetter, 1000);
+        };
+    </script>
+
+</body>
+</html>
+
